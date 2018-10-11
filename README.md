@@ -44,6 +44,10 @@ You can view the SOAP templates [here](https://github.com/OpenShopChannel/Open-S
 
 WSC has it's own JS API binded to the store app itself, so we are also documenting that content. The JS can be viewed in the ["js"](https://github.com/OpenShopChannel/ShopChannel/tree/master/public_html/js/) folder of our main repo.
 
+### Opera
+
+The browser used in the Wii Shop Channel is powered by Opera. The browser is limited to HTML 4.1 and does not support flash. It only takes a 4:3 space in the middle of the screen- or the entire screen if on a 4:3 monitor / TV.
+
 ### Improving this documentation
 
 This documentation is beyond incomplete, we'll need to go into more detail about the JS part, as well is include other components that WSC may use.
