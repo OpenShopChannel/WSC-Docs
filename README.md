@@ -1,17 +1,26 @@
-## Introduction
+---
+is_index: true
+permalink: index.html
+---
 
-The Wii Shop Channel was an online software store made for the Wii. Since this service will be shutting down during January 2019, we've now chosen to do our best to make our own documentation in hopes that this service could possibly be revived.
+# Introduction
+
+The Wii Shop Channel was an online software store made for the Wii. As this service shut down most functionality during January 2019, we've now chosen to do our best to make our own documentation in hopes that this service could possibly be revived.
 
 ### SOAP
 
 The WSC's SOAP services were Cataloging SOAP (CAS), Identity Authentication SOAP (IAS) and ECommerce SOAP (ECS).
-You can view the SOAP templates [here](https://github.com/OpenShopChannel/Open-Shop-SOAP/).
+You can view collected SOAP templates [here](https://github.com/OpenShopChannel/Open-Shop-SOAP/).
+
+<details>
+  <summary>View an example of an ECS request</summary>
+  <div markdown="1">
 
 ```xml
 <!--
-	OSC Note:
-		This SOAP template is for NotifyETicketsSynced.
-		Sensitive information such as the account holder's data was censored.
+  OSC Note:
+    This SOAP template is for NotifyETicketsSynced.
+    Sensitive information such as the account holder's data was censored.
 -->
 
 <!-- Request -->
@@ -39,10 +48,23 @@ You can view the SOAP templates [here](https://github.com/OpenShopChannel/Open-S
 </SOAP-ENV:Body>
 </SOAP-ENV:Envelope>
 ```
+  </div>
+</details>
+<br>
 
 ### JS
 
-WSC has it's own JS API binded to the store app itself, so we are also documenting that content. The JS can be viewed in the ["js"](https://github.com/OpenShopChannel/ShopChannel/tree/master/public_html/js/) folder of our main repo.
+WSC has its own JS API implemented within the store app itself, so we are also documenting that content.
+
+Select a component beneath for documentation:
+  * [DL Tasks](JS/DL Tasks.md)
+  * [EC](JS/EC.md)
+  * [Keyboard](JS/Keyboard.md)
+  * [Mii](JS/Mii.md)
+  * [NWC24](JS/NWC24.md)
+  * [Shop](JS/Shop.md)
+  * [SD Card](JS/SD Card.md)
+  * [Sound](JS/Sound.md)
 
 ### Opera
 
