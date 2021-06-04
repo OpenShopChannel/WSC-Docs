@@ -1,10 +1,17 @@
+---
+is_index: true
+permalink: index.html
+---
+
 # Introduction
 
-The Wii Shop Channel was an online software store made for the Wii. As this service shut down most functionality during January 2019, we’ve now chosen to do our best to make our own documentation in hopes that this service could possibly be revived.
+The Wii Shop Channel was an online software store made for the Wii. As this service shut down most functionality during January 2019, we've now chosen to do our best to make our own documentation in hopes that this service could possibly be revived.
 
-## Soap
+## SOAP
 
-The WSC’s SOAP services were Cataloging SOAP \(CAS\), Identity Authentication SOAP \(IAS\) and ECommerce SOAP \(ECS\). You can view collected SOAP templates [here](https://github.com/OpenShopChannel/Open-Shop-SOAP/).
+The WSC's SOAP services were Cataloging SOAP \(CAS\), Identity Authentication SOAP \(IAS\) and ECommerce SOAP \(ECS\). You can view collected SOAP templates [here](https://github.com/OpenShopChannel/Open-Shop-SOAP/).
+
+ View an example of an ECS request 
 
 ```markup
 <!--
@@ -13,6 +20,7 @@ The WSC’s SOAP services were Cataloging SOAP \(CAS\), Identity Authentication 
     Sensitive information such as the account holder's data was censored.
 -->
 
+<!-- Request -->
 <?xml version="1.0" encoding="UTF-8"?>
 <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
                    xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
@@ -38,15 +46,29 @@ The WSC’s SOAP services were Cataloging SOAP \(CAS\), Identity Authentication 
 </SOAP-ENV:Envelope>
 ```
 
-## JavaScript
+&lt;/div&gt; &lt;/details&gt;   
+
+
+## JS
 
 WSC has its own JS API implemented within the store app itself, so we are also documenting that content.
 
+Select a component beneath for documentation:
+
+* [DL Tasks](js/dl-tasks.md)
+* [EC](js/ec/)
+* [Keyboard](js/keyboard.md)
+* [Mii](js/mii.md)
+* [NWC24](js/nwc24.md)
+* [Shop](js/shop.md)
+* [SD Card](js/sd-card.md)
+* [Sound](js/sound.md)
+
 ## Opera
 
-The browser used in the Wii Shop Channel is powered by Opera. The browser is limited to HTML 4.1 and does not support flash. It only takes a 4:3 space in the middle of the screen - or the entire screen if on a 4:3 monitor / TV.
+The browser used in the Wii Shop Channel is powered by Opera. The browser is limited to HTML 4.1 and does not support flash. It only takes a 4:3 space in the middle of the screen- or the entire screen if on a 4:3 monitor / TV.
 
 ## Improving this documentation
 
-This documentation is beyond incomplete. We’ll need to go into more detail about the JS part, as well as including other components that WSC may use.
+This documentation is beyond incomplete, we'll need to go into more detail about the JS part, as well is include other components that WSC may use.
 
