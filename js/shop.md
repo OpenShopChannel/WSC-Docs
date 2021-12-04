@@ -1,172 +1,75 @@
 # Shop
 
-Pardon the mess, we said. Make this documented.
+When you wish to control the console itself, you utilize `wiiShop`. It is an important (and necessary) object to instanciate, as it controls the flow of the channel - rebooting, errors, options - alongside handling localization.
 
-```c
-  iVar2 = strcmp(s1,sreturnToUpdate_8030c880);
-  if (iVar2 == 0) {
-createFunction(DAT_803607f0,pWVar1,returnToUpdate,param_3);
-  }
-  else {
-iVar2 = strcmp(s1,srebootSystem_8030c890);
-if (iVar2 == 0) {
-  createFunction(DAT_803607f0,pWVar1,rebootSystem,param3);
-}
-else {
-  iVar2 = strcmp(__s1,s_returnToMenu_8030c8a0);
-  if (iVar2 == 0) {
-createFunction(DAT_803607f0,pWVar1,returnToMenu,param3);
-  }
-  else {
-iVar2 = strcmp(__s1,s_jumpToEULAViewer_8030c8b0);
-if (iVar2 == 0) {
-  createFunction(DAT_803607f0,pWVar1,jumpToEULAViewer,param3);
-}
-else {
-  iVar2 = strcmp(__s1,s_jumpToManualChannel_8030c8c4);
-  if (iVar2 == 0) {
-createFunction(DAT_803607f0,pWVar1,jumpToManualChannel,param3);
-  }
-  else {
-iVar2 = strcmp(__s1,s_retry_8035f648);
-if (iVar2 == 0) {
-  createFunction(DAT_803607f0,pWVar1,retry,param3);
-}
-else {
-  iVar2 = strcmp(__s1,s_beginWaiting_8030c8d8);
-  if (iVar2 == 0) {
-createFunction(DAT_803607f0,pWVar1,beginW,param3);
-  }
-  else {
-iVar2 = strcmp(__s1,s_endWaiting_8030c8e8);
-if (iVar2 == 0) {
-  createFunction(DAT_803607f0,pWVar1,endW,param3);
-}
-else {
-  iVar2 = strcmp(__s1,s_setWallpaper_8030c8f4);
-  if (iVar2 == 0) {
-createFunction(DAT_803607f0,pWVar1,setWallpaper,param3);
-  }
-  else {
-iVar2 = strcmp(s1,s_disableHRP_8030c904);
-if (iVar2 == 0) {
-  createFunction(DAT_803607f0,pWVar1,cpShopUrl,param_3);
-}
-else {
-  iVar2 = strcmp(s1,s_enableHRP_8030c910);
-  if (iVar2 == 0) {
-createFunction(DAT_803607f0,pWVar1,enableHRP,param3);
-  }
-  else {
-iVar2 = strcmp(__s1,s_error_8035f650);
-if (iVar2 == 0) {
-  createFunction(DAT_803607f0,pWVar1,error,param3);
-}
-else {
-  iVar2 = strcmp(__s1,s_closeManual_8030c91c);
-  if (iVar2 == 0) {
-createFunction(DAT_803607f0,pWVar1,closeManual,param3);
-  }
-  else {
-iVar2 = strcmp(s1,s_errMsg_8035f658);
-if (iVar2 == 0) {
-  uVar3 = getErrMsg();
-  setStrings(uVar3,param_3);
-}
-else {
-  iVar2 = strcmp(s1,s_errCode_8035f660);
-  if (iVar2 == 0) {
-setErrorCode(DAT_803607f4,param_3);
-  }
-  else {
-iVar2 = strcmp(s1,s_title_8035f668);
-if (iVar2 == 0) {
-  setStrings(7,param_3);
-}
-else {
-  iVar2 = strcmp(s1,s_retryBtn_8030c928);
-  if (iVar2 == 0) {
-setStrings(8,param_3);
-  }
-  else {
-iVar2 = strcmp(s1,s_menuBtn_8035f670);
-if (iVar2 == 0) {
-  if ((DAT_80360728 == 2) || (DAT_80360728 == 8)) {
-setStrings(0xc,param_3);
-  }
-  else {
-setStrings(9,param_3);
-  }
-}
-else {
-  iVar2 = strcmp(s1,s_wiiUMenuBtn_8030c934);
-  if (iVar2 == 0) {
-setStrings(0xe,param_3);
-  }
-  else {
-iVar2 = strcmp(s1,s_eulaBtn_8035f678);
-if (iVar2 == 0) {
-  setStrings(0xd,param_3);
-}
-else {
-  iVar2 = strcmp(s1,s_eulaMsg_8035f680);
-  if (iVar2 == 0) {
-setStrings(5,param_3);
-  }
-  else {
-iVar2 = strcmp(s1,s_manualChannelBtn_8030c940);
-if (iVar2 == 0) {
-  setStrings(0xf,param_3);
-}
-else {
-  iVar2 = strcmp(s1,s_connecting_8030c954);
-  if (iVar2 == 0) {
-
-stopConnectionTimerQ33ipl10netconnect10NetConnectFv
-  (DAT_8036c428);
-setStrings(0x10,param_3);
-  }
-  else {
-iVar2 = strcmp(s1,s_jumpDataMng_8030c960);
-if (iVar2 == 0) {
-  createFunction(DAT_803607f0,pWVar1,
- jumpDataManagement,param3);
-}
-else {
-  iVar2 = strcmp(__s1,s_setSCARank_8030c96c);
-  if (iVar2 == 0) {
-createFunction(DAT_803607f0,pWVar1,setSCARank,
-   param3);
-  }
-  else {
-iVar2 = strcmp(s1,PTR_sa__8030c7c0);
-if (iVar2 == 0) {
-  zz_8002a9a0(0,param3);
-}
-else {
-  iVar2 = strcmp(s1,PTR_sb__8030c7c4);
-  if (iVar2 == 0) {
-zz_8002a9a0(1,param3);
-  }
-  else {
-iVar2 = strcmp(s1,PTR_sc__8030c7c8);
-if (iVar2 == 0) {
-  zz_8002a9a0(2,param3);
-}
-else {
-  iVar2 = strcmp(s1,PTR_sd__8030c7cc);
-  if (iVar2 == 0) {
-zz_8002a9a0(3,param3);
-  }
-  else {
-iVar2 = strcmp(__s1,
-  s_isCompatibleMode_8030c978);
-  if (iVar2 == 0) {
-zz_8002a9d0((uint)DAT803607f9,param_3);
-  }
-  else {
-iVar2 = strcmp(__s1,s_launchCode_8030c98c);
-if (iVar2 == 0) {
-  zz_8002a9d0(DAT_80360728 & 0xff,param_3);
+```javascript
+var wiiShop = new wiiShop();
 ```
 
+## Methods
+
+| Method Name                           | Discussion                                                                                                                                                                                                                                                                                                                                                |
+| ------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `wiiShop.returnToUpdate()`            | Resets the system to the Wii System Update menu available in Settings.                                                                                                                                                                                                                                                                                    |
+| `wiiShop.rebootSystem()`              | Resets the system - i.e. restarting the channel. On a Wii U, this appears to go to the Wii U Menu.                                                                                                                                                                                                                                                        |
+| `wiiShop.returnToMenu()`              | Exits to the Wii System Menu.                                                                                                                                                                                                                                                                                                                             |
+| `wiiShop.jumpToEULAViewer()`          | Resets the system to the EULA agreement channel.                                                                                                                                                                                                                                                                                                          |
+| `wiiShop.jumpToManualChannel()`       | On a vWii, opens the [Wii Menu Electronic Manual](https://wiibrew.org/wiki/Wii\_Electronic\_Manual\_\(vWii\)). As this channel is not available by default on normal Wiis, it fails to launch and goes to the Wii System Menu.                                                                                                                            |
+| `wiiShop.retry()`                     | <p>First, it checks the current error code, if any.</p><p>If the error is:</p><ul><li>209506</li><li>209509</li><li>209510</li><li>209528</li><li>209535</li><li>209538</li><li>209540</li><li>209546</li></ul><p>the channel simply goes to the previous page.</p><p></p><p>If not, the channel is reset.</p>                                            |
+| `wiiShop.beginWaiting()`              | Shows the spinner UI over the currently loaded page.                                                                                                                                                                                                                                                                                                      |
+| `wiiShop.endWaiting()`                | Hides the spinner UI for the currently loaded page.                                                                                                                                                                                                                                                                                                       |
+| `wiiShop.setWallpaper(type)`          | <p>Changes the image displayed in the borders of the loaded webpage. There are four types, specified by <code>type</code>:</p><ul><li><code>0</code>: Dotted blue lines, default</li><li><code>1</code>: Pure black</li><li><code>2</code>: Pure white</li><li><code>3</code>: Blue vertical lines, as used within the health and safety manual</li></ul> |
+| `wiiShop.disableHRP()`                | Disables the HOME menu.                                                                                                                                                                                                                                                                                                                                   |
+| `wiiShop.enableHRP()`                 | Enables the HOME menu.                                                                                                                                                                                                                                                                                                                                    |
+| `wiiShop.error(errorCode, errorType)` | <p>Displays an error page with <code>errorCode</code>.</p><p></p><p>TODO: Determine what types are available for this section. <code>0</code> and <code>1</code> are known.</p>                                                                                                                                                                           |
+| `wiiShop.closeManual()`               | Apparently available to close the shop's manual, it simply returns to the Wii System Menu.                                                                                                                                                                                                                                                                |
+| `wiiShop.jumpDataMng()`               | Opens Data Management within the Wii System Menu.                                                                                                                                                                                                                                                                                                         |
+| `wiiShop.setSCARank(rank)`            | <p>Appears to adjust the color of Mario in the download screen? TODO: confirm</p><p></p><p>Rank <code>0</code> appears to be normal, <code>1</code> appears to be silver, <code>2</code> appears to be gold. Unclear what other values are.</p>                                                                                                           |
+
+## Properties (Get)
+
+| Property Name              | Discussion                                                                                                                                                                                                                                     |
+| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `wiiShop.errMsg`           | <p>Returns a localized string for the current error message.</p><p></p><p>TODO: Determine how this is set, and why error code 209658 is handled differently.</p>                                                                               |
+| `wiiShop.errCode`          | Returns the current error code registered as a string.                                                                                                                                                                                         |
+| `wiiShop.title`            | Returns a localized string of the channel. In English, this is "Wii Shop Channel".                                                                                                                                                             |
+| `wiiShop.retryBtn`         | Returns a localized string for the retry button, such as "Try Again" in English.                                                                                                                                                               |
+| `wiiShop.menuBtn`          | <p>If launched normally, returns a localized string for "Wii Menu".</p><p></p><p>If launched as a manual viewer, returns a localized string for "Back" .</p>                                                                                   |
+| `wiiShop.wiiUMenuBtn`      | Returns a localized string for "Wii U Menu".                                                                                                                                                                                                   |
+| `wiiShop.eulaBtn`          | Returns a localized string for "Proceed".                                                                                                                                                                                                      |
+| `wiiShop.eulaMsg`          | Returns a localized paragraph pleading for the user to agree to the Wii Network Services Agreement.                                                                                                                                            |
+| `wiiShop.manualBtn`        | Returns a localized string for "Continue".                                                                                                                                                                                                     |
+| `wiiShop.connecting`       | <p>Returns a localized string for "Connecting. Please wait..."</p><p></p><p>This string is extremely important and must be accessed on each page load. Please see <a href="shop.md#undefined">Connecting example</a> for more information.</p> |
+| `wiiShop.isCompatibleMode` | <p>Appears to always return 0, as nothing accesses what it reads from at 0x803607f9.</p><p></p><p>TODO: Verify</p>                                                                                                                             |
+| `wiiShop.launchCode`       | <p>Returns some variant of a launch code, which is also referenced to check if the channel was launched to be a manual viewer.</p><p></p><p>TODO: Determine possible codes</p>                                                                 |
+
+### Connecting Example
+
+It is important that `wiiShop.connecting` variable is accessed once per page load, as it stops an internal timer. It is additionally important that its value is set to a variable and not cast away, as it being accessed is what cancels the timer.
+
+If the timer is not cancelled, error 209601 is displayed after 100 seconds.
+
+The following code block provides an example of the bare minimum required to prevent an error thrown:
+
+```javascript
+var wiiShop = new wiiShop();
+const unused = wiiShop.connecting;
+```
+
+## Properties (Set)
+
+| Property Name                        | Discussion                                                                                                                                                                           |
+| ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `wiiShop.getLogUrl = stringVariable` | <p>Sets a log URL to the given string.</p><p></p><p>TODO: where and how is this used otherwise? It seemingly cannot be queried, and nothing accesses the URL throughout runtime.</p> |
+| `wiiShop.fadeColor = integerValue;`  | <p>Sets a color to fade to when exiting from the Mario downloading animation.</p><p></p><p>TODO: Is this correct?</p>                                                                |
+
+## Test Variables (Get/Set)
+
+It's unclear on what these are used for: the channel never utilizes set values throughout operation, nor does the Nintendo-provided Wii Shop Channel. Their values persist unmodified throughout the current channel's launch, making them the numerical equivalent to a cookie, at best. One can assume that they were most likely included for testing purposes with the C++ <-> JS runtime bindings for Opera. Nonetheless, they are included.
+
+| Property Name | Discussion                                                                                                               |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| `wiiShop._a_` | General-purpose [Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Number) type. |
+| `wiiShop._b_` | General-purpose [Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Number) type. |
+| `wiiShop._c_` | General-purpose [Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Number) type. |
+| `wiiShop._d_` | General-purpose [Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Number) type. |
