@@ -1,3 +1,7 @@
+---
+description: Life's better with sound
+---
+
 # Sound
 
 When you want to play sound effects or start background music, you do so via the `wiiSound` object.

@@ -1,3 +1,7 @@
+---
+description: WiiConnect24 functionality, directly within JS
+---
+
 # NWC24
 
 You interact with this object using `wiiNwc24`.
@@ -210,4 +214,3 @@ LAB_8002c39c:
 }
 setStrings(uVar6,param_3);
 ```
-

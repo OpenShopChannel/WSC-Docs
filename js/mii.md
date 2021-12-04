@@ -1,3 +1,7 @@
+---
+description: The best way to display user's Miis
+---
+
 # Mii
 
 When you want to source Mii imagery from a user, you use a mixture of JavaScript and the `miip` protocol. This is useful for identifying various users to send letters to, with all of its 64x64px action.

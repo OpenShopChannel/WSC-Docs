@@ -1,3 +1,7 @@
+---
+description: Progress tracking, simplified
+---
+
 # ECProgress
 
 `ECProgress` is an object describing an operation's state. You should not instantiate one yourself - instead, for all asynchronous operations, one will be returned by the function.

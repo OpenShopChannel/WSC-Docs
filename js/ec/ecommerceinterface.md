@@ -1,3 +1,7 @@
+---
+description: The main interface to interact with EC
+---
+
 # ECommerceInterface
 
 DiscussionYou use the ECommerce set of classes when you want to deal with the underlying EC APIs. With EC, you handle things such as title management and payment information. And you also have the option to handle components such as ECTitleLimit, a way to handle demo-respecting information for the System Menu.

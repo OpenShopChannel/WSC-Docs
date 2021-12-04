@@ -1,6 +1,10 @@
+---
+description: Device information, easily accessible
+---
+
 # ECDeviceInfo
 
-DiscussionWhen you need information about the user's device, you call `ECommerceInterface#getDeviceInfo()`. This ranges from storage information to device identifiers.
+When you need information about the user's device, you call `ECommerceInterface#getDeviceInfo()`. This ranges from storage information to device identifiers.
 
 ```javascript
 var info = ec.getDeviceInfo();

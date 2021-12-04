@@ -1,3 +1,7 @@
+---
+description: Banner operations at your fingertips
+---
+
 # DL Tasks
 
 As part of WiiConnect24, channels have the ability to register "tasks" permitting occasional download of any sort of file. For example, the Forecast Channel uses download tasks to update its information when idle. Historically the Wii Shop Channel changed its banner via download tasks.

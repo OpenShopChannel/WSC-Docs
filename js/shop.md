@@ -1,3 +1,7 @@
+---
+description: Control the whole channel
+---
+
 # Shop
 
 When you wish to control the console itself, you utilize `wiiShop`. It is an important (and necessary) object to instanciate, as it controls the flow of the channel - rebooting, errors, options - alongside handling localization.

@@ -1,3 +1,7 @@
+---
+description: Easily accessible SD card querying
+---
+
 # SD Card
 
 For all SD card queries, you utilize the `wiiSDCard` object. You use it to query statistics and informaton about the card, and call on it to perform title-related operations.
