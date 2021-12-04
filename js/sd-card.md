@@ -1,70 +1,23 @@
 # SD Card
 
-You interact with this object using `wiiSDCard`.
+For all SD card queries, you utilize the `wiiSDCard` object. You use it to query statistics and informaton about the card, and call on it to perform title-related operations.
 
-There's no usable documentation here yet, but please take the following psuedocode:
-
-```c
-iVar2 = MSL_C.PPCEABI.bare.H::strcmp(__s1,s_checkValidSD_8030d26c);
-if (iVar2 == 0) {
-  uVar3 = createFunction(DAT_80360820,pWVar1,checkValidSD_,param_3);
-}
-else {
-  iVar2 = MSL_C.PPCEABI.bare.H::strcmp(__s1,s_isInserted_8030d27c);
-  if (iVar2 == 0) {
-    uVar3 = createFunction(DAT_80360820,pWVar1,isInserted_,param_3);
-  }
-  else {
-    iVar2 = MSL_C.PPCEABI.bare.H::strcmp(__s1,s_isJournaling_8030d288);
-    if (iVar2 == 0) {
-      uVar3 = createFunction(DAT_80360820,pWVar1,isJournaling_,param_3);
-    }
-    else {
-      iVar2 = MSL_C.PPCEABI.bare.H::strcmp(__s1,s_getFreeKBytes_8030d298);
-      if (iVar2 == 0) {
-        uVar3 = createFunction(DAT_80360820,pWVar1,getFreeKBytes_,param_3);
-      }
-      else {
-        iVar2 = MSL_C.PPCEABI.bare.H::strcmp(__s1,s_getSDBackupSize_8030d2a8);
-        if (iVar2 == 0) {
-          uVar3 = createFunction(DAT_80360820,pWVar1,getSDBackupSize_,param_3);
-        }
-        else {
-          iVar2 = MSL_C.PPCEABI.bare.H::strcmp(__s1,s_setJournalFlag_8030d2b8);
-          if (iVar2 == 0) {
-            uVar3 = createFunction(DAT_80360820,pWVar1,setJournalFlag_,param_3);
-          }
-          else {
-            iVar2 = MSL_C.PPCEABI.bare.H::strcmp(__s1,s_backupToSDCard_8030d2c8);
-            if (iVar2 == 0) {
-              uVar3 = createFunction(DAT_80360820,pWVar1,backupToSDCard,param_3);
-            }
-            else {
-              iVar2 = MSL_C.PPCEABI.bare.H::strcmp(__s1,s_stopBackupToSDCard_8030d2d8);
-              if (iVar2 == 0) {
-                uVar3 = createFunction(DAT_80360820,pWVar1,stopBackupToSDCard_,param_3);
-              }
-              else {
-                iVar2 = MSL_C.PPCEABI.bare.H::strcmp(__s1,s_setCancelJournal_8030d2ec);
-                if (iVar2 == 0) {
-                  uVar3 = createFunction(DAT_80360820,pWVar1,setCancelJournal_,param_3);
-                }
-                else {
-                  iVar2 = MSL_C.PPCEABI.bare.H::strcmp(__s1,s_hasProgressFinished_8030d300);
-                  if (iVar2 == 0) {
-                    uVar3 = createFunction(DAT_80360820,pWVar1,hasProgressFinished_,param_3);
-                  }
-                  else {
-                    uVar3 = 8;
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
+```javascript
+var sdCard = new wiiSDCard();
 ```
+
+## Members
+
+| Name                                      | Discussion                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| ----------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `sdCard.checkValidSD(titleId, titleSize)` | <p>Checks whether an SD card is inserted, and whether it is available to be mounted as FAT, similar to <code>isInserted()</code>.</p><p></p><p>Past this, it checks whether the given <code>titleId</code> with the given <code>titleSize</code> is available to be migrated to the SD, depending on a myriad of checks.</p><p></p><p>Returns a negative number if not successful, zero if possible.</p><p></p><p>TODO: Document what error codes in particular.</p> |
+| `sdCard.isInserted()`                     | <p>Checks whether an SD card is inserted, and whether it is available to be mounted as FAT.</p><p></p><p>Returns <code>true</code> or <code>false</code>, depending on its state.</p>                                                                                                                                                                                                                                                                                |
+| `sdCard.isJournaling()`                   | Checks with the internal SD card manager on whether a journaling task is ongoing.                                                                                                                                                                                                                                                                                                                                                                                    |
+| `sdCard.getFreeKBytes()`                  | Returns the number of kilobytes free on the inserted SD card.                                                                                                                                                                                                                                                                                                                                                                                                        |
+| `sdCard.getSDBackupSize()`                | Returns the size of the pending SD card backup operation.                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `sdCard.setJournalFlag(titleId)`          | Marks the given `titleId` for downloading directly to the inserted SD card.                                                                                                                                                                                                                                                                                                                                                                                          |
+| `sdCard.backupToSDCard(titleId)`          | Starts the backup (transfer?) of a title's data to the SD card.                                                                                                                                                                                                                                                                                                                                                                                                      |
+| `sdCard.stopBackupToSDCard()`             | Halts the ongoing backup to the SD card. Does not clear copied data.                                                                                                                                                                                                                                                                                                                                                                                                 |
+| `sdCard.setCancelJournal()`               | Cancels the ongoing journal operation.                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| `sdCard.hasProgressFinished()`            | Returns `true` or `false` on whether a previously registered journaling or backup operation has completed.                                                                                                                                                                                                                                                                                                                                                           |
 
