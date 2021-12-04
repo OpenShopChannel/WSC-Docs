@@ -6,9 +6,9 @@ When you wish to control the console itself, you utilize `wiiShop`. It is an imp
 var wiiShop = new wiiShop();
 ```
 
-## Methods
+## Members
 
-| Method Name                           | Discussion                                                                                                                                                                                                                                                                                                                                                |
+| Member Name                           | Discussion                                                                                                                                                                                                                                                                                                                                                |
 | ------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `wiiShop.returnToUpdate()`            | Resets the system to the Wii System Update menu available in Settings.                                                                                                                                                                                                                                                                                    |
 | `wiiShop.rebootSystem()`              | Resets the system - i.e. restarting the channel. On a Wii U, this appears to go to the Wii U Menu.                                                                                                                                                                                                                                                        |
