@@ -6,21 +6,21 @@ When you want to source Mii imagery from a user, you use a mixture of JavaScript
 var mii = new wiiMii();
 ```
 
-## Prototypes
+## Members
 
-| Method | Documentation |
-| :--- | :--- |
-| `mii.getMiiNum()` | Returns the amount of Miis this console has. Will not exceed 100. |
+| Member Name            | Discussion                                                                                                      |
+| ---------------------- | --------------------------------------------------------------------------------------------------------------- |
+| `mii.getMiiNum()`      | Returns the amount of Miis this console has. Will not exceed 100.                                               |
 | `mii.isValidIcon(num)` | Returns a boolean if the Mii at number _num_ exists. This is helpful when looping to access via index from 100. |
-| `mii.getMiiName(num)` | Returns a string with the Mii at _num_'s name. |
+| `mii.getMiiName(num)`  | Returns a string with the Mii at _num_'s name.                                                                  |
 
 ## Protocol
 
-You have two ways of accessing Miis: via an index \(`IDX`\), or using the Mii's console ID \(`CID`\).
+You have two ways of accessing Miis: via an index ([IDX](mii.md#method-idx)), or using the Mii's console ID ([CID](mii.md#method-cid)).
 
 Regardless of what method, the `miip://` protocol accepts a basic format:
 
-```text
+```
 miip://METHOD/IDENTIFER.bmp?bgR=red&bgG=green&bgB=blue&width=64&height=64
 ```
 
@@ -31,9 +31,9 @@ You need to set a few params in order to use such a URL.
 * `bgR`, `bgG` and `bgB` are the background of the Mii image's in integer values. Instead of ff, you would do 255.
 * `width` and `height` are the rendered size in pixels of this bmp.
 
-**Method IDX**
+### **IDX**
 
-Nintendo imposed a max of 100 Miis. Because of this, you can simply iterate an array from 0-99 and call wiiMii\#isValidIcon\(num\) to verify it's valid.
+Nintendo imposed a max of 100 Miis. Because of this, you can simply iterate an array from 0-99 and call `wiiMii#isValidIcon(num)` to verify its validity.
 
 For example, to show the images of all valid Miis and log names using the functions above:
 
@@ -53,7 +53,6 @@ for (var i = 0; i < 100; i++) {
 }
 ```
 
-**Method CID**
+### **CID**
 
 TODO
-
