@@ -8,9 +8,9 @@ For example, you may encounter:
 var progress = ec.checkDeviceStatus();
 ```
 
-## Members
+## Properties
 
-| Member Name                  | Discussion                                                                                  |
+| Property Name                | Discussion                                                                                  |
 | ---------------------------- | ------------------------------------------------------------------------------------------- |
 | `progress.status`            | Integer regarding the internal EC value of operations. -4009 appears to mean "incomplete".  |
 | `progress.operation`         | String of the current operation. For the example above, this could be `checkDeviceStatus` . |
