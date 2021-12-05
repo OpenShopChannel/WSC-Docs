@@ -4,7 +4,13 @@ description: More input types than you can dream of
 
 # Keyboard
 
-When you want to accept content from the user, you instantiate and interact with `wiiKeyboard`.
+When you want to accept content from the user, you instantiate and interact with `wiiKeyboard`. Utilizing its method, you can specify layouts and options for input that best fit your content.
+
+```javascript
+var keyboard = new wiiKeyboard();
+```
+
+Note that `wiiKeyboard` will only function on pages loading over HTTPS. You will need to modify the Wii Shop Channel to load your content. Opera (and IOS via EC) only has SSLv3/TLS 1.0 available, so additional modifications to various trust levels may be necessary.
 
 ## Members
 
