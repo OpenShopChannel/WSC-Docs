@@ -214,3 +214,7 @@ LAB_8002c39c:
 }
 setStrings(uVar6,param_3);
 ```
+
+## Methods
+
+### Friends List
