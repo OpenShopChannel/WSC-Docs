@@ -4,217 +4,48 @@ description: WiiConnect24 functionality, directly within JS
 
 # NWC24
 
-You interact with this object using `wiiNwc24`.
+To send mail via WiiConnect24 and query error code strings, you utilize `wiiNwc24`. With mail, you can send normal messages, or gift titles. And via error codes, you can provide a better user experience.
 
-There are both functions and getters not yet documented:
-
-```c
-iVar3 = MSL_C.PPCEABI.bare.H::strcmp(__s1,s_getFriendNum_8030cb94);
-if (iVar3 == 0) {
-  createFunction(DAT_80360808,pWVar2,getFriendNum_,param_3);
-  goto LAB_8002c488;
-}
-iVar3 = MSL_C.PPCEABI.bare.H::strcmp(__s1,s_getFriendInfo_8030cba4);
-if (iVar3 == 0) {
-  createFunction(DAT_80360808,pWVar2,getFriendInfo_,param_3);
-  goto LAB_8002c488;
-}
-iVar3 = MSL_C.PPCEABI.bare.H::strcmp(__s1,s_sendGiftMailAsync_8030cbb4);
-if (iVar3 == 0) {
-  createFunction(DAT_80360808,pWVar2,sendGiftMailAsync_,param_3);
-  goto LAB_8002c488;
-}
-iVar3 = MSL_C.PPCEABI.bare.H::strcmp(__s1,s_sendReturnMailAsync_8030cbc8);
-if (iVar3 == 0) {
-  createFunction(DAT_80360808,pWVar2,sendReturnMailAsync_,param_3);
-  goto LAB_8002c488;
-}
-iVar3 = MSL_C.PPCEABI.bare.H::strcmp(__s1,s_sendNormalMailAsync_8030cbdc);
-if (iVar3 == 0) {
-  createFunction(DAT_80360808,pWVar2,sendNormalMailAsync_,param_3);
-  goto LAB_8002c488;
-}
-iVar3 = MSL_C.PPCEABI.bare.H::strcmp(__s1,s_isBusy_8035f69c);
-if (iVar3 == 0) {
-  createFunction(DAT_80360808,pWVar2,isBusy_,param_3);
-  goto LAB_8002c488;
-}
-iVar3 = MSL_C.PPCEABI.bare.H::strcmp(__s1,s_dispError_8030cbf0);
-if (iVar3 == 0) {
-  createFunction(DAT_80360808,pWVar2,dispError_,param_3);
-  goto LAB_8002c488;
-}
-iVar3 = MSL_C.PPCEABI.bare.H::strcmp(__s1,s_doLeftBtn_8030cbfc);
-if (iVar3 == 0) {
-  createFunction(DAT_80360808,pWVar2,doLeftBtn_,param_3);
-  goto LAB_8002c488;
-}
-iVar3 = MSL_C.PPCEABI.bare.H::strcmp(__s1,s_doRightBtn_8030cc08);
-if (iVar3 == 0) {
-  createFunction(DAT_80360808,pWVar2,doRightBtn_,param_3);
-  goto LAB_8002c488;
-}
-iVar3 = MSL_C.PPCEABI.bare.H::strcmp(__s1,s_myUserId_8030cc14);
-if (iVar3 == 0) {
-  *(undefined4 *)param_3 = 1;
-  pvVar4 = ipl::System::getNwc24Manager();
-  *(int *)((int)param_3 + 8) = (int)pvVar4 + 0x20;
-  goto LAB_8002c488;
-}
-iVar3 = MSL_C.PPCEABI.bare.H::strcmp(__s1,s_mailErrNo_8030cc20);
-if ((iVar3 == 0) || (iVar3 = MSL_C.PPCEABI.bare.H::strcmp(__s1,s_errCode_8035f6a8), iVar3 == 0)) {
-  *(undefined4 *)param_3 = 2;
-  getMiiManager__Q23ipl6SystemFv();
-  uVar5 = RFLGetAsyncStatus();
-  uVar1 = countLeadingZeros(uVar5);
-  if (uVar1 >> 5 == 0) {
-    getMiiManager__Q23ipl6SystemFv();
-    iVar3 = RFLGetAsyncStatus();
-    uVar1 = countLeadingZeros(&DAT_fffffff4 + iVar3);
-    if (uVar1 >> 5 == 0) {
-      *(double *)((int)param_3 + 8) = DOUBLE_80361670;
-      goto LAB_8002c488;
-    }
-  }
-  *(double *)((int)param_3 + 8) =
-       (double)CONCAT44(0x43300000,DAT_80360800 ^ 0x80000000) - DOUBLE_80361678;
-  goto LAB_8002c488;
-}
-iVar3 = MSL_C.PPCEABI.bare.H::strcmp(__s1,s_errCodeWithLabel_8030cc2c);
-if (iVar3 == 0) {
-  getMiiManager__Q23ipl6SystemFv();
-  uVar5 = RFLGetAsyncStatus();
-  uVar1 = countLeadingZeros(uVar5);
-  uVar6 = DAT_80360800;
-  if (uVar1 >> 5 == 0) {
-    getMiiManager__Q23ipl6SystemFv();
-    iVar3 = RFLGetAsyncStatus();
-    uVar1 = countLeadingZeros(&DAT_fffffff4 + iVar3);
-    uVar6 = DAT_80360800;
-    if (uVar1 >> 5 == 0) {
-      uVar6 = 109999;
-    }
-  }
-  setErrorCode(uVar6,param_3);
-  goto LAB_8002c488;
-}
-iVar3 = MSL_C.PPCEABI.bare.H::strcmp(__s1,s_errMsg_8035f6b0);
-if (iVar3 == 0) {
-  getMiiManager__Q23ipl6SystemFv();
-  uVar5 = RFLGetAsyncStatus();
-  uVar1 = countLeadingZeros(uVar5);
-  if (uVar1 >> 5 == 0) {
-    getMiiManager__Q23ipl6SystemFv();
-    iVar3 = RFLGetAsyncStatus();
-    uVar1 = countLeadingZeros(&DAT_fffffff4 + iVar3);
-    if (uVar1 >> 5 == 0) {
-      getMiiManager__Q23ipl6SystemFv();
-      iVar3 = RFLGetAsyncStatus();
-      uVar1 = countLeadingZeros(iVar3 + -3);
-      if (uVar1 >> 5 == 0) {
-        setStrings(0x1a,param_3);
-      }
-      else {
-        setStrings(0x1d,param_3);
-      }
-      goto LAB_8002c488;
-    }
-  }
-  if (DAT_80360804 == 0) {
-    *(undefined4 *)param_3 = 1;
-    *(code **)((int)param_3 + 8) = WWWAddJSPlugin;
-  }
-  else {
-    uVar6 = convErrToMsgId__Q23ipl16shopNwc24ManagerFQ23EGG10Nwc24Errori
-                      (DAT_80360804,DAT_80360800);
-    setStrings(uVar6,param_3);
-  }
-  goto LAB_8002c488;
-}
-iVar3 = MSL_C.PPCEABI.bare.H::strcmp(__s1,s_ready_8035f6b8);
-if (iVar3 == 0) {
-  *(undefined4 *)param_3 = 3;
-  uVar1 = countLeadingZeros(DAT_80360804);
-  *(uint *)((int)param_3 + 8) = uVar1 >> 5;
-  goto LAB_8002c488;
-}
-iVar3 = MSL_C.PPCEABI.bare.H::strcmp(__s1,s_sendable_8030cc40);
-if (iVar3 == 0) {
-  uVar5 = 0;
-  if ((DAT_80360804 - 7U < 2) || (DAT_80360804 == 0)) {
-    getMiiManager__Q23ipl6SystemFv();
-    uVar7 = RFLGetAsyncStatus();
-    uVar1 = countLeadingZeros(uVar7);
-    if (uVar1 >> 5 != 0) {
-      uVar5 = 1;
-    }
-  }
-  *(undefined4 *)param_3 = 3;
-  *(undefined4 *)((int)param_3 + 8) = uVar5;
-  goto LAB_8002c488;
-}
-iVar8 = MSL_C.PPCEABI.bare.H::strcmp(__s1,s_leftBtn_8035f6c0);
-iVar3 = DAT_80360804;
-if (iVar8 != 0) {
-  iVar8 = MSL_C.PPCEABI.bare.H::strcmp(__s1,s_rightBtn_8030cc4c);
-  iVar3 = DAT_80360804;
-  if (iVar8 != 0) goto LAB_8002c488;
-  getMiiManager__Q23ipl6SystemFv();
-  uVar5 = RFLGetAsyncStatus();
-  uVar1 = countLeadingZeros(uVar5);
-  if (uVar1 >> 5 == 0) {
-    getMiiManager__Q23ipl6SystemFv();
-    iVar8 = RFLGetAsyncStatus();
-    uVar1 = countLeadingZeros(&DAT_fffffff4 + iVar8);
-    if (uVar1 >> 5 != 0) goto LAB_8002c454;
-    uVar6 = 10;
-  }
-  else {
-LAB_8002c454:
-    if ((iVar3 == 4) || (iVar3 == 0xc)) {
-      uVar6 = 0xb;
-    }
-    else {
-      uVar6 = 10;
-    }
-  }
-  setStrings(uVar6,param_3);
-  goto LAB_8002c488;
-}
-getMiiManager__Q23ipl6SystemFv();
-uVar5 = RFLGetAsyncStatus();
-uVar1 = countLeadingZeros(uVar5);
-if (uVar1 >> 5 == 0) {
-  getMiiManager__Q23ipl6SystemFv();
-  iVar8 = RFLGetAsyncStatus();
-  uVar1 = countLeadingZeros(&DAT_fffffff4 + iVar8);
-  if (uVar1 >> 5 != 0) goto LAB_8002c39c;
-  iVar3 = shop::GetLaunchCode();
-  if ((iVar3 == 2) || (iVar3 = shop::GetLaunchCode(), iVar3 == 8)) {
-    uVar6 = 0xc;
-  }
-  else {
-    uVar6 = 9;
-  }
-}
-else {
-LAB_8002c39c:
-  if ((iVar3 - 7U < 2) || (iVar3 == 10)) {
-    uVar6 = 8;
-  }
-  else {
-    iVar3 = shop::GetLaunchCode();
-    if ((iVar3 == 2) || (iVar3 = shop::GetLaunchCode(), iVar3 == 8)) {
-      uVar6 = 0xc;
-    }
-    else {
-      uVar6 = 9;
-    }
-  }
-}
-setStrings(uVar6,param_3);
+```
+var nwc24 = new wiiNwc24();
 ```
 
 ## Methods
 
+| Method Name                                                        | Discussion                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| ------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `nwc24.getFriendNum()`                                             | Returns the amount of friends on the user's friends list.                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| `nwc24.getFriendInfo(num, type)`                                   | Queries information about the given friend list entry at `num`. For all possible `type` values, see [Friends List](nwc24.md#friends-list).                                                                                                                                                                                                                                                                                                                                  |
+| `nwc24.sendGiftMailAsync(friendIndex, urlPath, message, miiIndex)` | <p>Sends a mail using the gift design template with a body of the given <code>message</code>. The recipient is specified by <code>friendIndex</code> from the friends list. The sending user adds their Mii via <code>miiIndex</code>. <code>urlPath</code> is the URL this channel opens to when the Start button is clicked.<br><br>Please see <a href="nwc24.md#async-handling">Async Handling</a> for more information about the workflow for handling mail errors.</p> |
+| `nwc24.sendReturnMailAsync(friendIndex, message, miiIndex)`        | Similar to the above, however lacking the `url` parameter. The gift return design template is used.                                                                                                                                                                                                                                                                                                                                                                         |
+| `nwc24.sendNormalMailAsync(friendIndex, message, miiIndex)`        | Similar to the above. As the name implies, no mail design template is applied.                                                                                                                                                                                                                                                                                                                                                                                              |
+| `nwc24.isBusy()`                                                   | Returns whether the internal mail engine is currently processing an operation.                                                                                                                                                                                                                                                                                                                                                                                              |
+| `nwc24.dispError(code, type)`                                      | <p>Displays an error with <code>code</code>. There are 3 available types, though they appear ambiguous:</p><ul><li>No type (or no arguments) displays an error screen with "Wii Menu" and "Reset Channel".</li><li>Type <code>2</code> appears to have a "Wii Menu" and "Reset Channel" button, though sometimes it does not.</li><li>Type <code>8</code> appears to only show "Reset Channel".</li></ul>                                                                   |
+| `nwc24.doLeftBtn()`                                                | Handles function for the button displayed on the left within errors. Depending on the error type, the button either effectively goes to the last loaded page in history, or it resets the channel.                                                                                                                                                                                                                                                                          |
+| `nwc24.doRightBtn()`                                               | Called whenever the button on the right within error pages is selected. Depending on the error type, it either loads the initially loaded URL (for example, `/startup`) or resets the channel.                                                                                                                                                                                                                                                                              |
+
 ### Friends List
+
+You query information about entries within the user's friends list via `nwc24.getFriendInfo(num, type)`. There are three available query types:
+
+| Query Type | Discussion                                                                                       |
+| ---------- | ------------------------------------------------------------------------------------------------ |
+| `name`     | Returns the registered name for this friend as a string.                                         |
+| `userId`   | Returns the registered friend code as a string.                                                  |
+| `miiImage` | Returns a usable character ID for Mii image lookup. For more information, see [CID](mii.md#cid). |
+
+### Async Handling
+
+Unlike [ECProgress](ec/ecprogress.md) as utilized within EC, Nintendo chose yet another design. Users are expected to repeatedly query `nwc24.isBusy()` for&#x20;
+
+## Properties (Get)
+
+| Property Name                                                     | Discussion                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `nwc24.myUserId`                                                  | Returns a string with the current console's friend code.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| <p><code>nwc24.errCode</code><br><code>nwc24.mailErrNo</code></p> | Returns a number with the current registered mail error code.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `nwc24.errCodeWithLabel`                                          | <p>Returns a string with a formatted error code.<br>For example, assuming a console with its language set to English, one might return "Error code: 123456".</p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| `nwc24.errMsg`                                                    | Returns a localized string with a description of the error message.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| `nwc24.ready`                                                     | <p>Returns a boolean on whether an NWC24 error has been set.<br><br>TODO: Is this fully what the function performs?</p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| `nwc24.sendable`                                                  | <p>Determines on whether a message can be sent at call time, i.e. if the scheduler is busy.<br><br>TODO: Verify logic</p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| <p><code>nwc24.leftBtn</code><br><code>nwc24.rightBtn</code></p>  | <p>Returns a localized string to be displayed on the button within the given side of the page.<br><br>The button's string is determined from several factors.<br>For the right button:</p><ul><li><p>Is there a pending NWC24 error?</p><ul><li>If so, and the error is of type 4 or 10, the error is the localization of "Reset".</li><li>Otherwise, the string is the localization of "OK".</li></ul></li></ul><p>For the left button:</p><ul><li><p>Is there a pending NWC24 error?</p><ul><li>If so, and the current error minus seven (?) is greater than 2, or the current error is 10, localize "Try Again".</li></ul></li></ul><ul><li><p>What is the current launch code for the channel?</p><ul><li>If the launch code is 2 or 8, localize "Back".</li><li>Otherwise, localize "Wii Menu".</li></ul></li></ul> |
