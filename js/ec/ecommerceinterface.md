@@ -4,7 +4,7 @@ description: The main interface to interact with EC
 
 # ECommerceInterface
 
-DiscussionYou use the ECommerce set of classes when you want to deal with the underlying EC APIs. With EC, you handle things such as title management and payment information. And you also have the option to handle components such as ECTitleLimit, a way to handle demo-respecting information for the System Menu.
+You use the ECommerce set of classes when you want to deal with the underlying EC APIs. With EC, you handle things such as [title management](title-objects/) and [payment information](payment-objects/). And you also have the option to handle components such as [device information](ecdeviceinfo.md), permitting identification of the console in several ways.
 
 For every page, you'll want to initialize the `ECommerceInterface` type.
 
@@ -12,9 +12,9 @@ For every page, you'll want to initialize the `ECommerceInterface` type.
 var ec = new ECommerceInterface();
 ```
 
-This special type inherits from `ECGenericObject`, an internal C++ type that many others use as a parent. You should only create this specific object type once per page load in JS, as it calls `EC_Init` internally.
+This special type inherits from `ECGenericObject`, an internal C++ type that many others use as a parent. You should only create this specific object type once per page load in JS, as it calls the specical function `EC_Init` internally.
 
-Inside of EC, there is a JS "test mode" that allows modification of objects that are normally not modifiable via JS. This must be enabled at compile time, or with a patch to the binary.
+Inside of EC, there is a JS "[test mode](ecommerceinterface.md#js-test-mode-operations)" that allows modification of objects that are normally not modifiable via JS. This must be enabled at compile time, or with a patch to the binary.
 
 ## Members
 
