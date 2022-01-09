@@ -14,7 +14,7 @@ ECPrice expects exactly two parameters for its single constructor: `amount`, and
 var price = new ECPrice(amount, currency);
 ```
 
-For example, let's assume you wish to instanciate a price representing 4.99 USD. Both the amount and the currency are strings.
+For example, let's assume you wish to instantiate a price representing 4.99 USD. Both the amount and the currency are strings.
 
 ```javascript
 var price = new ECPrice('4.99', 'USD');
@@ -22,8 +22,8 @@ var price = new ECPrice('4.99', 'USD');
 
 ## Properties
 
-| Property Name | Discussion                                                                                                                                      |
-| ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| `amount`      | The amount that this ECPrice object represents, as a string. It is not converted to a numerical type for usage.                                 |
-| `currency`    | The currency this ECPrice object represents, as a string. There is no defined list of currencies checked against, so any value may be utilized. |
+| Property Name    | Discussion                                                                                                                                      |
+| ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| `price.amount`   | The amount that this ECPrice object represents, as a string. It is not converted to a numerical type for usage.                                 |
+| `price.currency` | The currency this ECPrice object represents, as a string. There is no defined list of currencies checked against, so any value may be utilized. |
 

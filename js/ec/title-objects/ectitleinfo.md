@@ -14,16 +14,16 @@ var info = ec.getTitleInfo('0000000100000002');
 
 ### Properties
 
-| Property Name        | Discussion                                                                                                                                                                                          |
-| -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `titleId`            | The title ID this object represents.                                                                                                                                                                |
-| `isOnDevice`         | <p>Whether this title is present on the console.<br><br>It is unclear on when this may ever be false, as attempting to query a title not present on the console will return <code>-4050</code>.</p> |
-| `isTmdPresent`       | <p>Whether a TMD is available for this title.<br><br>This may be possible if the user has removed the title, but its ticket is still present - i.e. removed via the System Menu.</p>                |
-| `version`            | The version of this title.                                                                                                                                                                          |
-| `occupiedUserBlocks` | The amount of blocks this title uses.                                                                                                                                                               |
-| `occupiedUserInodes` | The number of inodes taken up by this title.                                                                                                                                                        |
-| `occupiedSysBlocks`  | The amount of system-reserved blocks this title utilizes.                                                                                                                                           |
-| `occupiedSysInodes`  | The amount of system-reserved inodes used by this title.                                                                                                                                            |
+| Property Name             | Discussion                                                                                                                                                                                          |
+| ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `info.titleId`            | The title ID this object represents.                                                                                                                                                                |
+| `info.isOnDevice`         | <p>Whether this title is present on the console.<br><br>It is unclear on when this may ever be false, as attempting to query a title not present on the console will return <code>-4050</code>.</p> |
+| `info.isTmdPresent`       | <p>Whether a TMD is available for this title.<br><br>This may be possible if the user has removed the title, but its ticket is still present - i.e. removed via the System Menu.</p>                |
+| `info.version`            | The version of this title.                                                                                                                                                                          |
+| `info.occupiedUserBlocks` | The amount of blocks this title uses.                                                                                                                                                               |
+| `info.occupiedUserInodes` | The number of inodes taken up by this title.                                                                                                                                                        |
+| `info.occupiedSysBlocks`  | The amount of system-reserved blocks this title utilizes.                                                                                                                                           |
+| `info.occupiedSysInodes`  | The amount of system-reserved inodes used by this title.                                                                                                                                            |
 
 ## ECTitleInfos
 
@@ -32,13 +32,13 @@ var info = ec.getTitleInfo('0000000100000002');
 Similar to ECTitleInfo, it's undesirable to instantiate one yourself. ECommerceInterface similarly provides a way to acquire one yourself. For example, to acquire title info for all available titles on the console:
 
 ```javascript
-var tmds = ec.getTitleInfos();
+var infos = ec.getTitleInfos();
 ```
 
 ### Properties
 
-| Property Name | Discussion                                                                                                               |
-| ------------- | ------------------------------------------------------------------------------------------------------------------------ |
-| `length`      | The amount of titles within this array.                                                                                  |
-| `get(index)`  | Returns the [ECTitleInfo](ectitleinfo.md) at the given index.                                                            |
-| `set`         | This array is considered immutable. Despite it existing, attempting to call or access this property results in an error. |
+| Property Name      | Discussion                                                                                                               |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------ |
+| `infos.length`     | The amount of titles within this array.                                                                                  |
+| `infos.get(index)` | Returns the [ECTitleInfo](ectitleinfo.md) at the given index.                                                            |
+| `infos.set`        | This array is considered immutable. Despite it existing, attempting to call or access this property results in an error. |
