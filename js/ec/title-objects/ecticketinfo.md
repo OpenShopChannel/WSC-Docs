@@ -6,7 +6,8 @@ description: Easily accessible ticket information
 
 ECTicketInfo handles representing a ticket for a given title ID. It provides usable data about the status of the title on the Wii.
 
-You do not want to instantiate this object yourself. Instead, obtain one via `ec.getTicketInfos(titleId)` and iterate through all [ECTicketInfos](ecticketinfo.md#ecticketinfos) until you find what is desired. This will populate all ECTicketInfo available with usable data.\
+You do not want to instantiate this object yourself. Instead, obtain one via `ec.getTicketInfos(titleId)` and iterate through all [ECTicketInfos](ecticketinfo.md#ecticketinfos) until you find what is desired. This will populate all ECTicketInfo available with usable data.
+
 For example:
 
 ```javascript

@@ -9,7 +9,7 @@ ECTitleInfo represents information available about a title in a JavaScript-acces
 You most likely do not want to instantiate this object yourself. Instead, prefer querying one directly from [ECommerceInterface](../ecommerceinterface.md). For example:
 
 ```javascript
-var tmd = ec.getTitleInfo('0000000100000002');
+var info = ec.getTitleInfo('0000000100000002');
 ```
 
 ### Properties
