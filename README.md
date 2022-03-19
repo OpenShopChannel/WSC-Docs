@@ -5,13 +5,13 @@ permalink: index.html
 
 # Introduction
 
-The Wii Shop Channel was an online software store made for the Wii. As this service shut down most functionality during January 2019, we've now chosen to do our best to make our own documentation in hopes that this service could possibly be revived.
+The Wii Shop Channel was an online software store made for the Wii. As this service shut down most functionality during January 2019, we've chosen to do our best to make our own documentation in hopes that this service could possibly be revived.
 
-## JS
+## JavaScript
 
-WSC has its own JS API implemented within the store app itself, so we are also documenting that content.
+The Wii Shop Channel has several JavaScript APIs exposed to Opera. This allows a webpage to more easily interact with the console, primarily via underlying SDKs.
 
-Select a component beneath for documentation:
+There are 8 major components of this integration:
 
 * [DL Tasks](js/dl-tasks.md)
 * [EC](js/ec/)
@@ -24,7 +24,19 @@ Select a component beneath for documentation:
 
 ## SOAP
 
-The WSC's SOAP services were Cataloging SOAP (CAS), Identity Authentication SOAP (IAS) and ECommerce SOAP (ECS). You can view collected SOAP templates [here](https://github.com/OpenShopChannel/Open-Shop-SOAP/).
+EC, short for ECommerce, is a library that assists the console with title management and authentication. Many exposed functions via JavaScript interact with a corresponding EC library function to accomplish their task.
+
+When contacting the configured server, the ECommerce library communicates via SOAP, a [protocol utilizing XML](https://en.wikipedia.org/wiki/SOAP).
+
+There are three separate SOAP services, each handling a separate task:
+
+* [Cataloging SOAP](soap/cas/), abbreviated as CAS
+* [Identity Authentication SOAP](soap/ias/), abbreviated as IAS
+* [ECommerce SOAP](soap/ecs/), abbreviated as ECS
+
+The majority of requests within the Wii Shop Channel are IAS or ECS. CAS is most heavily used for titles handling DLCs, or video on demand services. As such, documentation for this service type should not be considered as exhaustive.
+
+An example of a [NotifyETicketsSynced](soap/ecs/notifyeticketssynced.md) request is as follows. See [Base Format](soap/base-format.md) for more information about these values.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
